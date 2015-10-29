@@ -7,6 +7,8 @@ defmodule IftttOauth.Mixfile do
      elixir: "~> 1.1",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     description: description,
+     package: package,
      deps: deps]
   end
 
@@ -29,4 +31,17 @@ defmodule IftttOauth.Mixfile do
   defp deps do
     [{:oauth2, "~> 0.4"}]
   end
+
+  defp description do
+     """
+     A simple Elixir wrapper around scrogson/oauth2 to retrieve IFTTT Bearer tokens from their mobile api.
+     """
+   end
+
+   defp package do
+     [maintainers: ["Nick Gal"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/nickgal/ifttt_oauth"}]
+   end
+
 end
